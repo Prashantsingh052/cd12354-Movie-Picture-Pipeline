@@ -55,11 +55,11 @@ jobs:
             --name $EKS_CLUSTER
 
       - name: Deploy Backend to EKS
-  run: |
-    kubectl apply -f starter/backend/k8s/deployment.yaml
-    kubectl apply -f starter/backend/k8s/service.yaml
+        run: |
+          kubectl apply -f starter/backend/k8s/deployment.yaml
+          kubectl apply -f starter/backend/k8s/service.yaml
 
-    kubectl set image deployment/backend \
-      backend=$IMAGE
+          kubectl set image deployment/backend \
+            backend=$IMAGE
 
-    kubectl rollout status deployment/backend
+          kubectl rollout status deployment/backend
