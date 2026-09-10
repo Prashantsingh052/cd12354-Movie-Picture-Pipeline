@@ -62,4 +62,4 @@ jobs:
           kubectl set image deployment/backend \
             backend=$IMAGE
 
-          kubectl rollout status deployment/backend
+          kubectl rollout status deployment/backend --timeout=5m
